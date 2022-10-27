@@ -1,0 +1,16 @@
+.host {
+    display: flex;
+}
+
+li {
+    flex-direction: row;
+    justify-content: center;
+    border: 1px rgb(104, 59, 146) solid;
+    max-width: 500px;
+}
+
+li span {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
