@@ -1,4 +1,3 @@
-import { Menu } from '../menu/menu';
 import styles from './header.module.css';
 
 export function Header() {
@@ -6,7 +5,7 @@ export function Header() {
     return (
         <header className={styles.header}>
             <h1 className={styles.h1}>{title}</h1>
-            <Menu></Menu>
+            {/* <Menu></Menu> */}
         </header>
     );
 }
