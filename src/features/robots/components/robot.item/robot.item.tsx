@@ -4,7 +4,7 @@ import { Robot } from '../../models/robot';
 import styles from './robot.item.module.css';
 
 export function RobotItem({ item }: { item: Robot }) {
-    const { robot, handleDelete } = useContext(RobotContext);
+    const { handleDelete } = useContext(RobotContext);
 
     const handlerDeleteClick = () => {
         handleDelete(item.id);
