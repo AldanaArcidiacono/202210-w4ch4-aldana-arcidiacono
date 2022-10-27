@@ -10,7 +10,7 @@ export function RobotList() {
             {/* <h2 className="title__robot">{title}</h2> */}
             <ul>
                 {ROBOTS.map((item: Robot) => (
-                    <RobotItem item={item}></RobotItem>
+                    <RobotItem key={item.id} item={item}></RobotItem>
                 ))}
             </ul>
         </section>
