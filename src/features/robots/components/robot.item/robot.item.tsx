@@ -1,4 +1,4 @@
-import { SyntheticEvent, useContext } from 'react';
+import { useContext } from 'react';
 import { RobotContext } from '../../../../infrastructure/context/contesx';
 import { Robot } from '../../models/robot';
 import styles from './robot.item.module.css';
