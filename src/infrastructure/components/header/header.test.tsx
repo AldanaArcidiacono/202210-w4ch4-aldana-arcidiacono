@@ -10,7 +10,7 @@ describe('Given Header component', () => {
                     <Header />
                 </Router>
             );
-            const element = screen.getByText(/Robots/i); // Expresion regular
+            const element = screen.getByText(/Robots/i);
             expect(element).toBeInTheDocument();
         });
     });
