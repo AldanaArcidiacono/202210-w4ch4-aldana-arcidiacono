@@ -1,39 +1,29 @@
-import { useContext } from 'react';
+import { SyntheticEvent, useContext } from 'react';
+import { RobotContext } from '../../../../infrastructure/context/contesx';
 import { Robot } from '../../models/robot';
 import styles from './robot.item.module.css';
 
 export function RobotItem({ item }: { item: Robot }) {
-    //const { handlerEraser, handlerComplete } = useContext(TodoContext);
+    const { robot, handleDelete } = useContext(RobotContext);
 
-    // const handleClick = () => {
-    //     handlerEraser(item.id);
-    // };
-
-    // const handleChange = () => {
-    //     handlerComplete(item);
-    // };
+    const handlerDeleteClick = () => {
+        handleDelete(item.id);
+        console.log('Robot borrado😊🤖');
+    };
 
     return (
-        <li key={item.id} className={styles.host}>
-            <div className="robot__card">
-                <img
-                    className="card-img"
-                    // src={'https://robohash.org/' + item.id}
-                    src={item.img}
-                    alt={'Robot ' + item.name}
-                />
-                <div className="card-body">
-                    <h2 className="robot__name">{item.name}</h2>
-                    <div className="robot__info">
-                        <ul>
-                            <li>Velocidad: {item.speed}</li>
-                            <li>Resistencia: {item.resistance}</li>
-                            <li className="robot-age">
-                                Fecha de creacion: {item.creationDate}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+        <li className={styles.host}>
+            <img src={item.img} alt={item.name} />
+            <div>
+                <span>
+                    <h2>Nombre: {item.name}</h2>
+                </span>
+                <span>Velocidad: {item.speed}</span>
+                <span>Resistencia: {item.resistance}</span>
+                <span>Fecha de nacimiento: {item.creationDate}</span>
+                <span className={styles.button} onClick={handlerDeleteClick}>
+                    🗑️
+                </span>
             </div>
         </li>
     );
